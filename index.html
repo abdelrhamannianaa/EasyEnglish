@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Practice Game</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+  <div class="container">
+    <h1>Speech Recognition Practice Game</h1>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+      <label for="questionCount">How many practice questions would you like?</label>
+      <input type="number" id="questionCount" min="1" max="10" value="3">
+      <button id="start-button">Start</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="hidden">
+      <p id="phrase-to-repeat"></p>
+      <button id="start-recognition">Start Speaking</button>
+      <p id="status"></p>
+      <p>Lives: <span id="lives">3</span></p>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+
+    <!-- End Screen -->
+    <div id="end-screen" class="hidden">
+      <p>Your total score is: <span id="total-score"></span></p>
+      <button id="play-again-button">Play Again</button>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
