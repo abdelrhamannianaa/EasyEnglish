@@ -16,13 +16,13 @@ def tryout(correctPhrase, wordSpoken):
         return False
 
 def userInput(oFilepath):
-    with open(r'C:\Users\a_nie\fnChck\output.txt', 'r') as file:
+    with open(oFilepath, 'r') as file:
         userInput = file.readline()
     return userInput
 
 
-def chosenPhrase():
-    with open(r'C:\Users\a_nie\fnChck\EasyEnglish\SpeechRecognition\sentences.txt', 'r') as file:
+def chosenPhrase(iFilePath):
+    with open(iFilePath, 'r') as file:
         correctSentences = file.readlines()
 
     chosenPhrase = random.choice(correctSentences)
