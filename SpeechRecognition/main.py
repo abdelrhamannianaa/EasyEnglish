@@ -4,17 +4,45 @@ from backend import *
 
 #C:\Users\a_nie\fnChck\EasyEnglish\SpeechRecognition\sentences.txt
 #C:\Users\a_nie\fnChck\EasyEnglish\output.txt
+userPoints = 0
+questionCount = int(input("How many practice questions would you like? "))
 
-print("your chosen word is ")
-iFilePath = input("Please enter where you will be pulling the phrase from: ")
-chosenWord = chosenPhrase(iFilePath)
-oFilepath = input("Please input where the output file is located: ")
-print(oFilepath)
-print(f"the phrase to repeat is: {chosenWord}")
+# iFilePath = input("Please enter where you will be pulling the phrase from: ")
+
+# oFilepath = input("Please input where the output file is located: ")
 
 
-speechRecognition()
+incorrectAnswers = []
+exit = False
+while(questionCount > 0 and (not exit)):
+    livesPerQ = 3
+    chosenWord = chosenPhrase()
+    print(f"the phrase to repeat is: {chosenWord}")
+    
+    userAnswer = userInput(speechRecognition())
+    correctAnswer = chosenWord
+    if userAnswer == "exit":
+        exit = True
+    else:
+        answer = False
+        while not answer and livesPerQ > 0:
+            answer = tryout(chosenWord,userAnswer)
+            if answer:
+                userPoints+= 1
+                print("Correct Answer")
+            else:
+                print("Incorrect Answer")
+                userAnswer = userInput(speechRecognition())
+                livesPerQ-= 1
 
-print(tryout(chosenWord,userInput(oFilepath)))
+    questionCount-= 1
+
+print(f"your total score is {userPoints}")
+
+# for answer in incorrectAnswers:
+#     print(answer)
+
+
+    
 
 
