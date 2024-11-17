@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Home</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: rgb(82, 39, 39);
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+       
+
+        /* Main Content */
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #50a6cb
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #50a6cb;
+            border-radius: 8px;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .cta-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .cta-btn:hover {
+            background-color: #27ae60;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Application</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#features">Practice Exercises</a></li>
+            <li><a href="#pricing">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h2>Welcome to Easy English, Max! </h2>
+            <p>.</p>
+            <a href="#features" class="cta-btn">Explore Features</a>
+        </section>
+
+        <!-- Features Section (Placeholder) -->
+        <section id="features" style="margin-top: 40px;">
+            <h2>Speech-to-text practice</h2>
+            <p>We are a passionate team working to provide you with the best tools for learning.</p>
+            <ul>
+                <button onclick="window.location.href='index.html';">Click to start practicing!</button>
+            </ul>
+        </section>
+
+        <!-- Pricing Section (Placeholder) -->
+        <section id="pricing" style="margin-top: 40px;">
+            <h2>About Us</h2>
+            <p>You can find more info here</p>
+            <ul>
+                <button onclick="window.location.href='AboutUs.html';">You can find more info here!</button>
+            </ul>
+        </section>
+
+     
+
+</body>
+</html>
+
+
+

@@ -1,3 +1,4 @@
+
 allSentences = [
     "The dog jumped over the fence",
     "I like to read books",

@@ -1,4 +1,5 @@
 
+
 from backend import *
 
 
@@ -44,5 +45,3 @@ print(f"your total score is {userPoints}")
 
 
     
-
-
