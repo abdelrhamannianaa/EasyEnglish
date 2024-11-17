@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speech Practice Game</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        margin-bottom: 150px;
+    }
+
+    /* Header Styles */
+    header {
+        background: #50a6cb;
+        color: #FFFDD0;
+        padding: 10px 20px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    /* Navigation Bar */
+    nav {
+        background: #50a6cb;
+        color: #FFFDD0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Main Content */
+    main {
+        padding: 20px;
+        background: #f4f4f4;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;    /* Center horizontally */
+        margin-top: 30px;
+    }
+
+    /* Footer */
+    footer {
+        background: #50a6cb;
+        color: #FFFDD0;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    #start-screen{
+        font-family: Georgia, serif;
+        border-radius: 50px;
+        background: #50a6cb;
+        padding: 50px;
+        width: 450px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 27px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin: 0 auto;
+    }
+
+    #questionCount{
+        font-family: Georgia, serif;
+        border-radius: 25px;
+        background: #50a6cb;
+        padding: 5px;
+        width: 50px;
+        height: 50px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;   
+        border-color: black;
+        grid-row-start: 2;   
+        grid-column-start: 1;   
+        grid-area: b;
+    }
+
+    #start-button{
+        font-family: Georgia, serif;
+        border-radius: 25px;
+        background: #50a6cb;
+        padding: 20px;
+        width: 300px;
+        height: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;    
+        grid-column-start: 2;
+        grid-column-end: 2; 
+        grid-row-start: 2;
+        grid-area: c;
+    }
+
+    #phrase-to-repeat{
+        color: black;
+    }
+
+    #inner-block{
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: "a a"
+                            "b c";
+    }
+    #questionText {
+        display:grid;
+        grid-area: a;
+    }
+
+    #game-screen {
+        font-family: Georgia, serif;
+        border-radius: 50px;
+        background: #50a6cb;
+        padding: 50px;
+        width: 600px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 27px;
+        text-align: center;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
+
+    #inner-blockGame{
+        margin-top: 20px;
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: "a a"
+                            "b b"
+                            "c c"
+                            "d e";
+    }
+
+    #phrase-to-repeat{
+        color: #FFFDD0;
+        display: grid;
+        height: 200;
+        grid-area: a;
+    }
+
+    #start-recognition{
+        font-family: Georgia, serif;
+        border-radius: 25px;
+        background: #50a6cb;
+        padding: 20px;
+        width: 500px;
+        height: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;    
+        grid-column-start: 2;
+        grid-column-end: 2; 
+        grid-row-start: 2;
+        grid-area: c;
+    }
+
+    #status{
+        font-family: Georgia, serif;
+        background: #50a6cb;
+        padding: 5px;
+        height: 100px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-right: 10px;   
+        grid-area: b;
+    }
+
+    #end-screen{
+        font-family: Georgia, serif;
+        border-radius: 50px;
+        background: #50a6cb;
+        padding: 50px;
+        width: 450px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 27px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin: 0 auto;
+    }
+
+    #inner-blockEndGame{
+        margin-top: 20px;
+        display:grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: "a a"
+                            "b b";
+    }
+
+    #play-again-button{
+        font-family: Georgia, serif;
+        border-radius: 25px;
+        background: #50a6cb;
+        padding: 20px;
+        width: 200px;
+        height: auto;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        color: #FFFDD0;
+        font-size: 15px;
+        text-align: center;
+        margin-top: 10px;
+        margin-left: 30px;    
+        grid-column-start: 2;
+        grid-column-end: 2; 
+        grid-row-start: 2;
+        grid-area: b;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Speech Recognition Practice Game
+        <button onclick="window.location.href='homepage.html'">Back to Home</button>
+    </h1>
+    <p>Quiz questions that helps with pronunciation and comprehension.</p>
+  </header>
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <div id ="inner-block">
+            <label id="questionText">How many practice questions would you like?</label>
+            <input type="number" id="questionCount" min="1" max="10" value="3">
+            <button id="start-button">Start</button>
+      </div>
+    </div>
+    <div>
+        y
+    </div>
+    <!-- Game Screen -->
+    <div id="game-screen" class="hidden">
+        <div id="inner-blockGame">
+            <p id="phrase-to-repeat"></p>
+            <p id="status"></p>
+            <button id="start-recognition">Start Speaking</button>
+            <p>Lives: <span id="lives">3</span></p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+    </div>
+
+    <!-- Circle
+    <main>
+        <div id= "circle" > 
+            <h1>
+                English
+            </h1>
+        </div>
+    </main> -->
+
+    <div>
+        .
+    </div>
+    <!-- End Screen -->
+    <div id="end-screen" class="hidden">
+      <p>Your total score is: <span id="total-score"></span></p>
+      <button id="play-again-button">Play Again</button>
+    </div>
+
+    
+    <script src="app.js" defer></script>
+</body>
+
+<footer>start-recognition
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+</html>
